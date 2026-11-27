@@ -39,7 +39,7 @@ La agenda va al lado de `public_html`, **no dentro** (así sus archivos nunca so
 
 ```bash
 cd /home/new.aasolutionsllc.com
-git clone -b claude/project-thread-deot8f https://github.com/keineria/Agenda-AA.git agenda
+git clone -b main https://github.com/keineria/Agenda-AA.git agenda
 cd agenda
 cp .env.example .env
 chmod 600 .env
