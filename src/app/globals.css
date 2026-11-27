@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --accent: 236 95 168;
+  --grad-public: linear-gradient(150deg, #a5b4fc 0%, #8b7cf6 28%, #6d5dfc 52%, #b388eb 76%, #f3a6c8 100%);
+  --grad-panel: linear-gradient(165deg, #3b2f7a 0%, #2a2a6e 45%, #1f2c66 70%, #6b4b8f 100%);
+}
+
+html, body { min-height: 100%; }
+[data-theme="aa"] { --accent: 8 1 255; }
+html.embed, html.embed body { min-height: 0; background: transparent; }
+body { @apply font-sans text-brand-ink antialiased; }
+
+@layer components {
+  .bg-public { background: var(--grad-public); background-size: 100% 100%; }
+  .cap-first::first-letter { text-transform: uppercase; }
+  .bg-panel { background: var(--grad-panel); }
+  .card { @apply rounded-2xl bg-white shadow-card; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-bold transition focus:outline-none focus-visible:ring-4 disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-brand-pink text-white shadow-pink hover:brightness-105 focus-visible:ring-pink-200; }
+  .btn-blue { @apply btn bg-brand-blue text-white hover:brightness-110 focus-visible:ring-indigo-200; }
+  .btn-ghost { @apply btn bg-white/70 text-brand-ink ring-1 ring-slate-200 hover:bg-white focus-visible:ring-slate-200; }
+  .btn-danger { @apply btn bg-rose-500 text-white hover:bg-rose-600 focus-visible:ring-rose-200; }
+  .input { @apply w-full rounded-xl border border-slate-200 bg-slate-50/60 px-3.5 py-2.5 text-[15px] text-brand-ink outline-none transition placeholder:text-slate-400 focus:border-brand-violet focus:bg-white focus:ring-4 focus:ring-violet-100; }
+  .label { @apply mb-1.5 block text-sm font-bold text-brand-ink; }
+  .help { @apply mt-1 text-xs text-brand-muted; }
+  .chip { @apply inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-bold; }
+}
